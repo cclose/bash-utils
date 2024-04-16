@@ -7,6 +7,16 @@ Collection of Bash Utilities for scripting
 
 Searchs the environment to determine what the docker CLI executable is
 
+### docker_get_semantic_versions
+
+Retrieves SemVer tags from a docker hub repo
+
+### docker_is_latest_version
+
+Compares if provided tag is a newer SemVer than
+existing SemVer tags in a docker repo. If param 3, current_version,
+isn't a SemVer, will return false
+
 
 ## github.sh
 

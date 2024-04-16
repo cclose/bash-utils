@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# get_docker_executable
+# docker_get_executable
 #
 # Function to determine the Docker executable. Works with
 # - podman
 # - nerdctl
 # - docker
 # Defaults to docker, but prefers podman -> nerdctl -> docker
-get_docker_executable() {
+docker_get_executable() {
     local docker_executable
 
     if command -v podman &>/dev/null; then

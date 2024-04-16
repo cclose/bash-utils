@@ -2,10 +2,10 @@
 
 GITHUB_API_URL="https://api.github.com"
 
-# get_latest_github_release
+# github_get_latest_release
 #
 # Function to get the latest release tag from a GitHub repo
-get_latest_github_release() {
+github_get_latest_release() {
     local owner="$1"
     local repo="$2"
     local auth=""
@@ -17,10 +17,10 @@ get_latest_github_release() {
     echo "$latest_release"
 }
 
-# check_github_release
+# github_check_release
 #
 # Checks if the specified release exists for the specified github repo
-check_github_release() {
+github_check_release() {
     local owner="$1"
     local repo="$2"
     local tag="$3"
@@ -38,11 +38,11 @@ check_github_release() {
     fi
 }
 
-# get_go_version
+# github_get_repo_go_version
 #
 # Function to get the Go version from go.mod for a specific release of a GitHub repo.
 # Useful for parsing which version of go you need for a release of a repo
-get_github_repo_go_version() {
+github_get_repo_go_version() {
     local repo="$1"
     local release_tag="$2"
     local go_version=$(curl -sSL "https://raw.githubusercontent.com/$repo/$release_tag/go.mod" | grep -E '^go[[:space:]]+[0-9]+\.[0-9]+')
